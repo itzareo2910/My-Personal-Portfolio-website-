@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arijit Laskar – Computer Science Undergraduate</title>
+<meta name="description" content="Portfolio of Arijit Laskar: BSc Computer Science student at RKMRC Narendrapur. Cybersecurity, web development, AI/ML.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f2f4f9;--surface:#fff;--ink:#16183a;--muted:#555a78;--line:#d5d9e6;--accent:#e9a417;--link:#2a2f8f;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#101228;--surface:#191c3a;--ink:#eceefb;--muted:#a3a8cc;--line:#2c3060;--accent:#f4b73a;--link:#aab4ff;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#101228;--surface:#191c3a;--ink:#eceefb;--muted:#a3a8cc;--line:#2c3060;--accent:#f4b73a;--link:#aab4ff;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:20}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,input:focus-visible,h1:focus-visible,h2:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:21;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:.7rem;padding-bottom:.2rem}
+.brand{font:800 1.15rem var(--display);letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+nav{display:flex;gap:1.1rem;overflow-x:auto;max-width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;padding:.55rem 0 .6rem;color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem;border-bottom:3px solid transparent}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+@media(max-width:699px){nav{width:100%;gap:1.25rem}}
+
+/* pages */
+.page{padding:clamp(2rem,6vw,4rem) 0 3.5rem}
+.page[hidden]{display:none}
+h1{font:800 clamp(2.9rem,12vw,7.5rem)/.95 var(--display);letter-spacing:-.03em;margin:0;word-break:break-word}
+h1 span{display:block}
+h2{font:800 clamp(2rem,6vw,3.2rem)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 1.75rem}
+h3{font:600 1.1rem/1.3 var(--body);margin:0}
+.role{color:var(--muted);font-weight:500;margin:0 0 1rem}
+.lede{max-width:38rem;font-size:1.2rem;margin:1.75rem 0 0}
+.cipher{display:flex;align-items:center;gap:.9rem;margin-top:1.75rem;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
+.cipher input{accent-color:var(--accent);width:min(14rem,100%)}
+.cipher output{font:600 .95rem var(--body);min-width:5.5ch;color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.btn{display:inline-block;padding:.55rem 1rem;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#16183a}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.stats{display:flex;flex-wrap:wrap;gap:.6rem;margin:2.5rem 0 0;padding:0;list-style:none}
+.stats li{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.5rem .85rem;font-size:.93rem}
+.stats b{font-family:var(--display);font-size:1.15rem}
+.rows{margin:3rem 0 0}
+.rows h3{margin-bottom:.4rem;color:var(--muted);font-weight:500;font-size:.95rem}
+.rows a{display:block;padding:1rem 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}
+.rows a:last-child{border-bottom:1px solid var(--line)}
+.rows b{font:800 1.3rem/1.2 var(--display)}
+.rows span{display:block;color:var(--muted);font-size:.95rem}
+.rows a:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:4px}
+.narrow{max-width:44rem}
+.item{margin:0 0 2rem;padding-left:1.1rem;border-left:3px solid var(--accent)}
+.item:last-child{margin-bottom:0}
+.meta{color:var(--muted);font-size:.93rem;margin:.15rem 0 .5rem}
+.item p{margin:.4rem 0 0}
+.item ul{margin:.4rem 0 0;padding-left:1.1rem}
+li{margin:.3rem 0}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{padding:.65rem 0;border-bottom:1px solid var(--line);margin:0}
+.plain li:last-child{border:0}
+.plain b{font-weight:600}
+.plain small{display:block;color:var(--muted);font-size:.9rem}
+.sub{font:800 1.3rem var(--display);margin:2.5rem 0 .5rem}
+dl{margin:0}
+dt{font-weight:600;margin-top:1rem}
+dt:first-child{margin-top:0}
+dd{margin:.15rem 0 0;color:var(--muted)}
+
+/* footer */
+footer{background:var(--surface);border-top:1px solid var(--line);padding:2.5rem 0 calc(2rem + env(safe-area-inset-bottom,0px))}
+.fgrid{display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:700px){.fgrid{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{margin:0 0 .6rem;font:600 .95rem var(--body);color:var(--muted)}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.3rem 0}
+footer a{color:var(--ink)}
+.fname{font:800 1.5rem var(--display);margin:0 0 .4rem}
+.fine{margin:2rem 0 0;color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#home">Arijit Laskar</a>
+    <nav aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- HOME -->
+<div class="page" id="page-home">
+  <p class="role">BSc Computer Science · RKMRC Narendrapur, Kolkata</p>
+  <h1 id="name" aria-label="Arijit Laskar"><span aria-hidden="true" data-t="Arijit">Arijit</span><span aria-hidden="true" data-t="Laskar">Laskar</span></h1>
+  <p class="lede">Second-year student building toward software engineering, cybersecurity and AI/ML. I like understanding how systems work, then making them clearer and safer.</p>
+  <div class="cipher">
+    <label for="shift">My name, as a Caesar cipher. Drag to decrypt.</label>
+    <input id="shift" type="range" min="0" max="25" value="0" aria-describedby="shiftval">
+    <output id="shiftval" for="shift">shift 0</output>
+  </div>
+  <div class="btns">
+    <a class="btn main" href="#projects">See my projects</a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+  <ul class="stats">
+    <li><b>8.81</b> CGPA, year 1</li>
+    <li><b>9.22</b> SGPA, semester 1</li>
+    <li><b>97.78</b> percentile, CUET UG 2025 (CS)</li>
+    <li><b>96%</b> National Topper, Python (SWAYAM)</li>
+  </ul>
+  <div class="rows">
+    <h3>Start here</h3>
+    <a href="#experience"><b>Experience</b><span>Cybersecurity internship at Decodelabs, Atlas 0f Code, ENVISION 2k26</span></a>
+    <a href="#projects"><b>Projects</b><span>A hackathon community platform and a cricket auction simulator</span></a>
+    <a href="#achievements"><b>Achievements</b><span>National Topper and Gold Medalist, scholarships, certifications</span></a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about" hidden>
+  <h2>About</h2>
+  <div class="narrow">
+    <p>I’m a Computer Science undergraduate with a strong academic record and hands-on experience in cybersecurity and web development.</p>
+    <p>I’m looking for internships in software engineering, cybersecurity and AI/ML, built on a foundation of data structures, databases and programming. Outside the classroom I help run the Coding Club, volunteer with the National Service Scheme and take part in quizzes and photography competitions.</p>
+    <p class="sub">At a glance</p>
+    <dl>
+      <dt>Based in</dt><dd>Kolkata, West Bengal, India</dd>
+      <dt>Studying</dt><dd>BSc Computer Science (major), minors in Mathematics and Electronics, 2025–2029</dd>
+      <dt>Looking for</dt><dd>Internships in software engineering, cybersecurity and AI/ML</dd>
+      <dt>Languages spoken</dt><dd>English (professional working), Bengali (full professional), Hindi (native/bilingual)</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="page" id="page-experience" hidden>
+  <h2>Experience</h2>
+  <div class="narrow">
+    <div class="item">
+      <h3>Cybersecurity Intern, Decodelabs</h3>
+      <p class="meta">June 2026 – July 2026</p>
+      <ul>
+        <li>Analysed phishing threats, triaged security incidents and studied cryptographic fundamentals and classical encryption.</li>
+        <li>Built and deployed Caesar Cipher and other cryptographic tools in both Python and C.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h3>Media Coordinator, Atlas 0f Code</h3>
+      <p class="meta">July 2026 – present</p>
+      <ul><li>Working member of the official Coding Club of the Dept. of Computer Science, RKMRC, supporting competitive programming and collaborative learning.</li></ul>
+    </div>
+    <div class="item">
+      <h3>Student Coordinator, ENVISION 2k26</h3>
+      <p class="meta">July 2026 – present · Annual Tech Fest, Dept. of Computer Science, RKMRC</p>
+    </div>
+    <div class="item">
+      <h3>Student Volunteer, National Service Scheme</h3>
+      <p class="meta">August 2025 – present · Social services</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="page" id="page-projects" hidden>
+  <h2>Projects</h2>
+  <div class="narrow">
+    <div class="item">
+      <h3>ABTalks website redesign</h3>
+      <p class="meta">2026 · HTML, CSS, JavaScript · ViCoDathon 2026</p>
+      <p>A redesigned coding-challenge community platform for an all-India AI-first vibe coding hackathon. Responsive grid layout, with streak tracking, a task dashboard and a dynamic leaderboard built from scratch.</p>
+    </div>
+    <div class="item">
+      <h3>Cricket fantasy auction simulator</h3>
+      <p class="meta">2026 · Python, Tkinter</p>
+      <p>A desktop auction simulator using nested dictionaries for constant-time player and bid lookups, with real-time interface updates. Includes bidding logic, player selection and auction-state management, in both GUI and CLI versions.</p>
+    </div>
+    <div class="item">
+      <h3>Caesar Cipher toolkit</h3>
+      <p class="meta">2026 · Python, C · Decodelabs internship</p>
+      <p>Cryptographic tools implemented in two languages to compare how the same principles carry across them.</p>
+    </div>
+    <p><a href="https://github.com/itzareo2910" rel="noopener">See the code on GitHub</a></p>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="page" id="page-education" hidden>
+  <h2>Education</h2>
+  <div class="narrow">
+    <div class="item">
+      <h3>BSc Computer Science, Ramakrishna Mission Residential College (Autonomous), Narendrapur</h3>
+      <p class="meta">July 2025 – July 2029 · Minors in Mathematics and Electronics</p>
+      <ul><li>Departmental topper in Semester 1. CUET UG 2025: 97.78 percentile in Computer Science.</li></ul>
+    </div>
+    <div class="item">
+      <h3>Higher Secondary, Agarpara Mahajati Vidyapith</h3>
+      <p class="meta">2017 – March 2025 · Pure Science (PCM) and Computer Science</p>
+      <ul><li>Higher Secondary 90.75% and Secondary 93.14%, school topper in both (WBCHSE, WBBSE).</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="page" id="page-achievements" hidden>
+  <h2>Achievements</h2>
+  <div class="narrow">
+    <ul class="plain">
+      <li><b>National Topper and Gold Medalist, CEC Programming in Python</b><small>SWAYAM, Ministry of Education · 96% in the NTA–CEC exam · July 2026</small></li>
+      <li><b>Central Sector Scheme of Scholarship (CSSS)</b><small>Ministry of Education, Govt. of India · August 2026</small></li>
+      <li><b>National Means-Cum-Merit Scholarship</b><small>Selected via nationwide test · received for Classes 9–12 · November 2022</small></li>
+      <li><b>Vidyasagar Science Olympiad, inter-block 3rd rank</b><small>Jagadis Bose National Science Talent Search and Govt. of West Bengal · June 2022</small></li>
+      <li><b>Runners-up, Intra-College Quiz 2025–26</b><small>RKMRC · team of 5 · April 2026</small></li>
+      <li><b>2nd runner-up, Intra-College Photography 2025–26</b><small>RKMRC · March 2026</small></li>
+      <li><b>1st runner-up, Quizzical</b><small>Inter-college tech fest</small></li>
+    </ul>
+    <p class="sub">Certifications</p>
+    <ul class="plain">
+      <li><b>Cyber Job Simulation, Deloitte Australia</b><small>Forage · June 2026</small></li>
+      <li><b>Claude 101</b><small>Anthropic · June 2026</small></li>
+      <li><b>Introduction to Responsible AI</b><small>Google Cloud Skills Boost · June 2026</small></li>
+      <li><b>Introduction to Large Language Models</b><small>Google Cloud Skills Boost · February 2026</small></li>
+      <li><b>Introduction to Generative AI</b><small>Google Cloud Skills Boost · February 2026</small></li>
+      <li><b>Annual Certification in Music (add-on course)</b><small>RKMRC · August 2026</small></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="page" id="page-skills" hidden>
+  <h2>Skills</h2>
+  <div class="narrow">
+    <dl>
+      <dt>Languages</dt><dd>C, C++, Python, Java</dd>
+      <dt>Web</dt><dd>HTML, CSS, JavaScript</dd>
+      <dt>Databases</dt><dd>SQL, RDBMS, MongoDB (basics)</dd>
+      <dt>Computer science</dt><dd>Data structures and algorithms, OOP, graph theory, discrete mathematics, digital electronics</dd>
+      <dt>Domains</dt><dd>Cybersecurity fundamentals, AI/ML foundations, web development</dd>
+      <dt>Tools</dt><dd>LaTeX, MS PowerPoint, MS Excel, draw.io, Figma, Canva</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact" hidden>
+  <h2>Contact</h2>
+  <div class="narrow">
+    <p>I’m open to internships in software engineering, cybersecurity and AI/ML. The quickest way to reach me is email.</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:arijitlaskar2910@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/arijit-laskar-789686375" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/itzareo2910" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.instagram.com/itz_areo2910" rel="noopener">Instagram</a>
+    </div>
+    <p class="meta" style="margin-top:1.5rem">Kolkata, West Bengal, India</p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fname">Arijit Laskar</p>
+        <p style="margin:0;color:var(--muted);max-width:22rem">BSc Computer Science undergraduate. Cybersecurity, web development and AI/ML.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find me online</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/arijit-laskar-789686375" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/itzareo2910" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.instagram.com/itz_areo2910" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:arijitlaskar2910@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">© 2026 Arijit Laskar. Designed and built by me.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* tab routing: plain #name hashes */
+  var pages=document.querySelectorAll('.page'),links=document.querySelectorAll('nav a');
+  var baseTitle=document.title;
+  function route(initial){
+    var id=location.hash.slice(1);
+    if(!document.getElementById('page-'+id)) id='home';
+    pages.forEach(function(p){p.hidden=(p.id!=='page-'+id)});
+    links.forEach(function(a){
+      if(a.getAttribute('href')==='#'+id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    document.title=id==='home'?baseTitle:id.charAt(0).toUpperCase()+id.slice(1)+' – Arijit Laskar';
+    if(!initial){
+      window.scrollTo(0,0);
+      var h=document.querySelector('#page-'+id+' h1, #page-'+id+' h2');
+      if(h){h.tabIndex=-1;h.focus({preventScroll:true})}
+    }
+    var active=document.querySelector('nav a[aria-current]');
+    if(active&&active.scrollIntoView){try{active.scrollIntoView({inline:'center',block:'nearest'})}catch(e){}}
+  }
+  window.addEventListener('hashchange',function(){route(false)});
+  route(true);
+
+  /* Caesar cipher hero */
+  var spans=document.querySelectorAll('#name span'),slider=document.getElementById('shift'),out=document.getElementById('shiftval');
+  function enc(s,k){return s.replace(/[A-Za-z]/g,function(c){var b=c<='Z'?65:97;return String.fromCharCode((c.charCodeAt(0)-b+k)%26+b)})}
+  function render(k){
+    spans.forEach(function(s){s.textContent=enc(s.dataset.t,k)});
+    out.textContent='shift '+k;slider.value=k;
+  }
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slider.addEventListener('input',function(){render(+slider.value)});
+  if(reduce){render(0);return}
+  var k=13;render(k);
+  var t=setInterval(function(){k--;render(k);if(k<=0)clearInterval(t)},110);
+  slider.addEventListener('pointerdown',function(){clearInterval(t)});
+})();
+</script>
+</body>
+</html>
